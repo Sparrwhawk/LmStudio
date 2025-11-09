@@ -1,0 +1,10 @@
+{
+  "file-examiner": {
+    "allowedExtensions": ".txt,.md,.json,.xml,.csv,.log,.yml,.yaml,.ini,.cfg,.conf,.properties,.js,.ts,.py,.java,.cpp,.c,.h,.html,.css,.sql,.php,.rb,.go,.rs,.cs,.vb,.fs,.csproj,.vbproj,.fsproj,.sln,.config,.resx,.xaml,.razor,.cshtml,.vbhtml,.aspx,.ascx,.asmx,.dll,.exe,.msi,.nupkg,.jpg,.jpeg,.png,.gif,.bmp,.tiff,.tif,.webp,.svg,.ico,.heic,.heif,.raw,.cr2,.nef,.arw,.dng",
+    "maxFileSize": 10,
+    "restrictedPaths": "C:\\Windows\\System32,C:\\Program Files,C:\\Program Files (x86)",
+    "enableImageFiles": true,
+    "enableDotNetFiles": true,
+    "enableBinaryFiles": true
+  }
+}
