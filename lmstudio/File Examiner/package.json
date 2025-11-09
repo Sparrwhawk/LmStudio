@@ -1,0 +1,29 @@
+{
+  "name": "lms-plugin-file-examiner",
+  "version": "1.0.0",
+  "description": "LM Studio plugin that allows AI to safely examine files on local file system",
+  "main": "index.js",
+  "scripts": {
+    "dev": "lms dev",
+    "push": "lms push"
+  },
+  "keywords": [
+    "lm-studio",
+    "plugin",
+    "file-system",
+    "ai",
+    "local-files"
+  ],
+  "author": "Sparr",
+  "license": "MIT",
+  "dependencies": {
+    "@lmstudio/sdk": "1.4.0",
+    "lms-plugin-file-examiner": "file:",
+    "zod": "3.24.1",
+    "mime-types": "^2.1.35"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.8",
+    "@types/mime-types": "^2.1.1"
+  }
+}
