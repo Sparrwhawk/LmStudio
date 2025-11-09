@@ -1,0 +1,10 @@
+{
+  "type": "plugin",
+  "runner": "node",
+  "owner": "lmstudio",
+  "name": "file-examiner",
+  "revision": 1,
+  "displayName": "File Examiner",
+  "description": "Safe file system access for AI models",
+  "version": "1.0.0"
+}

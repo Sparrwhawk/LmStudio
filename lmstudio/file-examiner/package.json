@@ -2,8 +2,9 @@
   "name": "lms-plugin-file-examiner",
   "version": "1.0.0",
   "description": "LM Studio plugin that allows AI to safely examine files on local file system",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "build": "tsc",
     "dev": "lms dev",
     "push": "lms push"
   },
@@ -24,6 +25,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.14.8",
-    "@types/mime-types": "^2.1.1"
+    "@types/mime-types": "^2.1.1",
+    "typescript": "^5.0.0"
   }
 }

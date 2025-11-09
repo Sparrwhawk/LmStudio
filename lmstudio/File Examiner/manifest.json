@@ -1,7 +1,0 @@
-{
-  "type": "plugin",
-  "runner": "node",
-  "owner": "lmstudio",
-  "name": "file-examiner",
-  "revision": 1
-}
