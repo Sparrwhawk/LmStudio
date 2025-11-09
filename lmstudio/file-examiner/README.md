@@ -4,12 +4,38 @@ A secure add-on for LM Studio that allows AI models to safely examine and read f
 
 ## Features
 
-- **Safe File Reading**: Read text files with built-in security restrictions
+- **Safe File Reading**: Read text files with configurable security restrictions
 - **Directory Browsing**: List directory contents and navigate file structure
 - **File Information**: Get detailed metadata about files and directories
 - **File Search**: Search for files using pattern matching with wildcard support
-- **Security Controls**: Built-in path validation and file type restrictions
+- **Configurable Security**: Customizable file type restrictions and security controls through LM Studio settings
 - **Size Limits**: Configurable file size limits to prevent memory issues
+- **.NET Support**: Full support for .NET development files
+- **Image Support**: Metadata extraction for image files
+
+## Configuration
+
+The File Examiner plugin is fully configurable through LM Studio's plugin settings. You can customize:
+
+### **Allowed File Extensions**
+- Comma-separated list of file extensions (include dots: `.txt,.js,.cs`)
+- Default includes text, code, .NET, and image files
+- Can be modified to restrict or expand supported file types
+
+### **Security Settings**
+- **Max File Size**: Set maximum file size limit (1-100 MB)
+- **Restricted Paths**: Define directories that are completely blocked
+- **File Type Toggles**: Enable/disable categories of files:
+  - Image Files (metadata only)
+  - .NET Development Files  
+  - Binary Files (metadata only)
+
+### **Default Configuration**
+- **Max file size**: 10MB
+- **Restricted paths**: Windows system directories and Program Files
+- **All file types enabled** by default
+
+> **Note**: Changes to configuration require restarting the chat session to take effect.
 
 ## Security Features
 
@@ -20,11 +46,29 @@ The add-on automatically blocks access to sensitive system directories:
 - `C:\Program Files (x86)`
 
 ### Allowed File Types
-Only specific file extensions are permitted:
+Only specific file extensions are permitted for security:
+
+**Text and Documentation:**
 - Text files: `.txt`, `.md`, `.log`
 - Configuration: `.json`, `.xml`, `.yml`, `.yaml`, `.ini`, `.cfg`, `.conf`, `.properties`
-- Code files: `.js`, `.ts`, `.py`, `.java`, `.cpp`, `.c`, `.h`, `.html`, `.css`, `.sql`
 - Data files: `.csv`
+
+**Programming Languages:**
+- Web: `.js`, `.ts`, `.html`, `.css`, `.php`
+- System: `.py`, `.java`, `.cpp`, ".c", `.h`, `.sql`, `.rb`, `.go`, `.rs`
+
+**.NET Development Files:**
+- Source code: `.cs`, `.vb`, `.fs`
+- Project files: `.csproj`, `.vbproj`, `.fsproj`, `.sln`
+- Web files: `.razor`, `.cshtml`, `.vbhtml`, `.aspx`, `.ascx`, `.asmx`
+- Resources: `.config`, `.resx`, `.xaml`
+- Binaries: `.dll`, `.exe`, `.msi`, `.nupkg` *(metadata only)*
+
+**Image Files:** *(metadata only)*
+- Common formats: `.jpg`, `.jpeg`, `.png`, `.gif`, `.bmp`, `.tiff`, `.webp`, `.svg`, `.ico`
+- RAW formats: `.heic`, `.heif`, `.raw`, `.cr2`, `.nef`, `.arw`, `.dng`
+
+> **Note:** Binary files (images, executables) return metadata and file information only, not raw content.
 
 ### File Size Limits
 - Maximum file size: 10MB (configurable)
@@ -32,13 +76,47 @@ Only specific file extensions are permitted:
 
 ## Installation
 
-1. Copy the add-on folder to your LM Studio add-ons directory
+1. Copy the plugin folder to your LM Studio plugins directory
 2. Install dependencies:
    ```bash
    npm install
    ```
 3. Restart LM Studio
-4. Enable the "File Examiner" add-on in LM Studio settings
+4. Enable the "File Examiner" plugin in LM Studio settings
+
+## Configuration Access
+
+To configure the File Examiner plugin:
+
+1. **Open LM Studio**
+2. **Go to Settings** (⚙️ icon)
+3. **Navigate to Extensions/Plugins**
+4. **Find "File Examiner"** in the plugin list
+5. **Click "Configure"** or the settings icon next to the plugin
+6. **Modify settings** as needed:
+   - Allowed file extensions
+   - Maximum file size
+   - Restricted paths  
+   - Enable/disable file type categories
+7. **Save configuration**
+8. **Start a new chat** for changes to take effect
+
+### Configuration Examples
+
+**Restrict to only text files:**
+```
+.txt,.md,.log
+```
+
+**Add custom file types:**
+```
+.txt,.md,.json,.py,.cs,.jsx,.vue,.go
+```
+
+**Increase file size limit:**
+```
+25 (for 25MB limit)
+```
 
 ## API Endpoints
 

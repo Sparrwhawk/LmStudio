@@ -3,8 +3,8 @@
   "runner": "node",
   "owner": "lmstudio",
   "name": "file-examiner",
-  "revision": 1,
+  "revision": 2,
   "displayName": "File Examiner",
-  "description": "Safe file system access for AI models",
-  "version": "1.0.0"
+  "description": "Configurable file system access for AI models with .NET and image support",
+  "version": "2.0.0"
 }
